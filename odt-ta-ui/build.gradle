@@ -1,0 +1,9 @@
+dependencies {
+  implementation project(":odt-ta")
+
+  // openflexo dep
+  implementation flexoUi()
+  // external dep
+  // testing dep
+  testImplementation flexoUiTest()
+}
