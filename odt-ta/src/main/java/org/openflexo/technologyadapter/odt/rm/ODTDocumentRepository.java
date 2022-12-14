@@ -24,7 +24,7 @@ import org.openflexo.foundation.resource.FlexoResourceCenter;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapterResourceRepository;
 import org.openflexo.pamela.annotations.ModelEntity;
 import org.openflexo.pamela.exceptions.ModelDefinitionException;
-import org.openflexo.pamela.factory.ModelFactory;
+import org.openflexo.pamela.factory.PamelaModelFactory;
 import org.openflexo.technologyadapter.odt.ODTTechnologyAdapter;
 import org.openflexo.technologyadapter.odt.model.ODTDocument;
 
@@ -34,9 +34,9 @@ public interface ODTDocumentRepository<I>
 
 	public static <I> ODTDocumentRepository<I> instanciateNewRepository(ODTTechnologyAdapter technologyAdapter,
 			FlexoResourceCenter<I> resourceCenter) {
-		ModelFactory factory;
+		PamelaModelFactory factory;
 		try {
-			factory = new ModelFactory(ODTDocumentRepository.class);
+			factory = new PamelaModelFactory(ODTDocumentRepository.class);
 			ODTDocumentRepository<I> newRepository = factory.newInstance(ODTDocumentRepository.class);
 			newRepository.setTechnologyAdapter(technologyAdapter);
 			newRepository.setResourceCenter(resourceCenter);
