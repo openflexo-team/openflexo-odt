@@ -33,6 +33,7 @@ import org.openflexo.pamela.annotations.XMLElement;
 import org.openflexo.technologyadapter.odt.fml.ODTParagraphRole;
 import org.openflexo.technologyadapter.odt.fml.action.AddODTParagraph;
 import org.openflexo.technologyadapter.odt.model.ODTDocument;
+import org.openflexo.technologyadapter.odt.rm.ODTDocumentResource;
 
 /**
  * Implementation of the ModelSlot class for the ODT technology adapter<br>
@@ -46,12 +47,12 @@ import org.openflexo.technologyadapter.odt.model.ODTDocument;
 @ModelEntity
 @ImplementationClass(ODTModelSlot.ODTModelSlotImpl.class)
 @XMLElement
-public interface ODTModelSlot extends FreeModelSlot<ODTDocument> {
+public interface ODTModelSlot extends FreeModelSlot<ODTDocument, ODTDocumentResource> {
 
 	@Override
 	public ODTTechnologyAdapter getModelSlotTechnologyAdapter();
 
-	public static abstract class ODTModelSlotImpl extends FreeModelSlotImpl<ODTDocument> implements ODTModelSlot {
+	public static abstract class ODTModelSlotImpl extends FreeModelSlotImpl<ODTDocument, ODTDocumentResource> implements ODTModelSlot {
 
 		@SuppressWarnings("unused")
 		private static final Logger logger = Logger.getLogger(ODTModelSlot.class.getPackage().getName());
