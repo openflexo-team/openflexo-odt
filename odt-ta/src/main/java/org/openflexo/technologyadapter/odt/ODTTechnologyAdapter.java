@@ -211,7 +211,8 @@ public class ODTTechnologyAdapter extends TechnologyAdapter<ODTTechnologyAdapter
 		ODTDocumentRepository<I> returned = resourceCenter.retrieveRepository(ODTDocumentRepository.class, this);
 		if (returned == null) {
 			returned = ODTDocumentRepository.instanciateNewRepository(this, resourceCenter);
-			resourceCenter.registerRepository(returned, ODTDocumentRepository.class, this);
+			// Another thread may have registered one meanwhile: use the registered one (CORE-D-25)
+			returned = resourceCenter.registerRepository(returned, ODTDocumentRepository.class, this);
 		}
 		return returned;
 	}
