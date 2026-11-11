@@ -29,7 +29,6 @@ import org.openflexo.foundation.fml.annotations.DeclareFlexoRoles;
 import org.openflexo.foundation.technologyadapter.FreeModelSlot;
 import org.openflexo.pamela.annotations.ImplementationClass;
 import org.openflexo.pamela.annotations.ModelEntity;
-import org.openflexo.pamela.annotations.XMLElement;
 import org.openflexo.technologyadapter.odt.fml.ODTParagraphRole;
 import org.openflexo.technologyadapter.odt.fml.action.AddODTParagraph;
 import org.openflexo.technologyadapter.odt.model.ODTDocument;
@@ -46,7 +45,6 @@ import org.openflexo.technologyadapter.odt.rm.ODTDocumentResource;
 @DeclareEditionActions({ AddODTParagraph.class })
 @ModelEntity
 @ImplementationClass(ODTModelSlot.ODTModelSlotImpl.class)
-@XMLElement
 public interface ODTModelSlot extends FreeModelSlot<ODTDocument, ODTDocumentResource> {
 
 	@Override

@@ -24,7 +24,6 @@ import org.openflexo.foundation.fml.FlexoRole;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapter;
 import org.openflexo.pamela.annotations.ImplementationClass;
 import org.openflexo.pamela.annotations.ModelEntity;
-import org.openflexo.pamela.annotations.XMLElement;
 import org.openflexo.technologyadapter.odt.ODTTechnologyAdapter;
 import org.openflexo.technologyadapter.odt.model.ODTParagraph;
 
@@ -36,7 +35,6 @@ import org.openflexo.technologyadapter.odt.model.ODTParagraph;
  */
 @ModelEntity
 @ImplementationClass(ODTParagraphRole.ODTParagraphRoleImpl.class)
-@XMLElement
 public interface ODTParagraphRole extends FlexoRole<ODTParagraph> {
 
 	public static abstract class ODTParagraphRoleImpl extends FlexoRoleImpl<ODTParagraph>implements ODTParagraphRole {

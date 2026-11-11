@@ -28,7 +28,6 @@ import org.openflexo.foundation.fml.editionaction.TechnologySpecificActionDefini
 import org.openflexo.foundation.fml.rt.RunTimeEvaluationContext;
 import org.openflexo.pamela.annotations.ImplementationClass;
 import org.openflexo.pamela.annotations.ModelEntity;
-import org.openflexo.pamela.annotations.XMLElement;
 import org.openflexo.technologyadapter.odt.ODTModelSlot;
 import org.openflexo.technologyadapter.odt.model.ODTDocument;
 import org.openflexo.technologyadapter.odt.model.ODTParagraph;
@@ -42,7 +41,6 @@ import org.openflexo.technologyadapter.odt.model.ODTParagraph;
 
 @ModelEntity
 @ImplementationClass(AddODTParagraph.AddODTParagraphImpl.class)
-@XMLElement
 public interface AddODTParagraph extends TechnologySpecificActionDefiningReceiver<ODTModelSlot, ODTDocument, ODTParagraph> {
 
 	public static abstract class AddODTParagraphImpl
