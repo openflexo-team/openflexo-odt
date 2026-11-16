@@ -23,6 +23,7 @@ package org.openflexo.technologyadapter.odt.fml.action;
 import java.lang.reflect.Type;
 import java.util.logging.Logger;
 
+import org.openflexo.foundation.fml.rt.error.FMLExecutionException;
 import org.openflexo.foundation.fml.editionaction.TechnologySpecificAction;
 import org.openflexo.foundation.fml.editionaction.TechnologySpecificActionDefiningReceiver;
 import org.openflexo.foundation.fml.rt.RunTimeEvaluationContext;
@@ -58,7 +59,7 @@ public interface AddODTParagraph extends TechnologySpecificActionDefiningReceive
 		}
 
 		@Override
-		public ODTParagraph execute(RunTimeEvaluationContext evaluationContext) {
+		public ODTParagraph execute(RunTimeEvaluationContext evaluationContext) throws FMLExecutionException {
 			ODTParagraph result = null;
 			// TODO : Implement Action
 			return result;
