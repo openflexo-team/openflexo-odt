@@ -31,7 +31,7 @@ import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 
-import org.openflexo.foundation.FlexoException;
+import org.openflexo.foundation.OpenflexoRuntimeException;
 import org.openflexo.foundation.resource.FileIODelegate;
 import org.openflexo.foundation.resource.FileWritingLock;
 import org.openflexo.foundation.resource.FlexoResourceImpl;
@@ -44,7 +44,7 @@ public abstract class ODTDocumentResourceImpl extends FlexoResourceImpl<ODTDocum
 	private static final Logger logger = Logger.getLogger(ODTDocumentResourceImpl.class.getPackage().getName());
 
 	@Override
-	public ODTDocument loadResourceData() throws ResourceLoadingCancelledException, FileNotFoundException, FlexoException {
+	public ODTDocument loadResourceData() throws ResourceLoadingCancelledException, FileNotFoundException, OpenflexoRuntimeException {
 
 		System.out.println("Hop, on charge le document " + getFile());
 
@@ -62,7 +62,7 @@ public abstract class ODTDocumentResourceImpl extends FlexoResourceImpl<ODTDocum
 		} catch (ResourceLoadingCancelledException e) {
 			e.printStackTrace();
 			throw new SaveResourceException(getIODelegate());
-		} catch (FlexoException e) {
+		} catch (OpenflexoRuntimeException e) {
 			e.printStackTrace();
 			throw new SaveResourceException(getIODelegate());
 		}
@@ -95,7 +95,7 @@ public abstract class ODTDocumentResourceImpl extends FlexoResourceImpl<ODTDocum
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			return null;
-		} catch (FlexoException e) {
+		} catch (OpenflexoRuntimeException e) {
 			e.printStackTrace();
 		}
 		return null;
